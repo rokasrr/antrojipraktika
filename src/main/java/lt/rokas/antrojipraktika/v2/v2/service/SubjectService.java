@@ -1,6 +1,5 @@
 package lt.rokas.antrojipraktika.v2.v2.service;
 
-import lt.rokas.antrojipraktika.v2.v2.entity.StudentsGroup;
 import lt.rokas.antrojipraktika.v2.v2.entity.Subject;
 import lt.rokas.antrojipraktika.v2.v2.entity.User;
 

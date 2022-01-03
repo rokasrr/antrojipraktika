@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
     <title>Metastud System</title>
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -22,41 +22,33 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/subjects}">Subjects Management</a>
+                <a class="nav-link" th:href="@{/}">Log-out</a>
             </li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
-    <div class="row">
-        <h1> List Subjects </h1>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-3">
-            <a th:href="@{/subjects/new}" class="btn btn-primary btn-sm mb-3"> Add Subject</a>
-        </div>
-    </div>
+    <h2>Grades</h2>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
         <tr>
-            <th> Subject Name</th>
-            <th> Lector Name</th>
-            <th> Lector Lastname</th>
-            <th> Actions</th>
+            <th> First Name</th>
+            <th> Last name</th>
+            <th> Group</th>
+            <th> Subject</th>
+            <th> Value</th>
         </tr>
         </thead>
 
         <tbody>
-        <tr th:each="subject: ${subjects}">
-            <td th:text="${subject.name}"></td>
-            <td th:if="${subject.lector} != null" th:text="${subject.lector.firstName}"></td>
-            <td th:if="${subject.lector} != null" th:text="${subject.lector.lastName}"></td>
-            <td>
-                <a th:href="@{/groups/assign/{id}/{groupId}(id=${subject.id}, groupId=${groupId})}"
-                   class="btn btn-primary">Select</a>
-            </td>
+        <tr th:each="grade: ${userGrades}">
+            <td th:text="${grade.student} == null ? 'NEĮVESTA' : ${grade.student.firstName}"></td>
+            <td th:text="${grade.student} == null ? 'NEĮVESTA' : ${grade.student.lastName}"></td>
+            <td th:if="${grade.student} != null"
+                th:text="${grade.student.studentsGroup} == null ? 'NEĮVESTA' : ${grade.student.studentsGroup.name}"></td>
+            <td th:if="${grade.grade != null}" th:text="${grade.subject} == null ? 'NEĮVESTA' : ${grade.subject.name}"></td>
+            <td th:text="${grade.grade} == null ? 'NEĮVESTA' : ${grade.grade}"></td>
         </tr>
         </tbody>
 

@@ -10,8 +10,8 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!-- Brand -->
-    <a class="navbar-brand" href="#">Metastud System</a>
+
+    <a class="navbar-brand" href="#">Metastud system</a>
 
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -20,20 +20,11 @@
 
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/users}">Users Management</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/groups}">Groups Management</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/subjects}">Subjects Management</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/}">Log-out</a>
-            </li>
-        </ul>
+<!--        <ul class="navbar-nav">-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" th:href="@{/users}">User Management</a>-->
+<!--            </li>-->
+<!--        </ul>-->
     </div>
 </nav>
 <br>
@@ -41,20 +32,30 @@
 <div class = "container">
     <div class = "row">
         <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-            <h1 class = "text-center"> Rename Group </h1>
+            <h1 class = "text-center"> Login </h1>
             <div class = "card-body">
-                <form th:action="@{/groups/{id} (id=${group.id})}" th:object = "${group}" method="POST">
+                <form th:action="@{/login}" th:object = "${userDto}" method="POST">
                     <div class ="form-group">
-                        <label> Subject Name </label>
+                        <label> User First Name </label>
                         <input
                                 type = "text"
-                                name = "Name"
-                                th:field = "*{name}"
+                                name = "firstName"
+                                th:field = "*{firstName}"
                                 class = "form-control"
-                                placeholder="Enter Subject Name"
+                                placeholder="Enter User First Name"
                         />
                     </div>
 
+                    <div class ="form-group">
+                        <label> User password </label>
+                        <input
+                                type = "text"
+                                name = "password"
+                                th:field = "*{password}"
+                                class = "form-control"
+                                placeholder="Enter User Password"
+                        />
+                    </div>
                     <div class = "box-footer">
                         <button type="submit" class = "btn btn-primary">
                             Submit

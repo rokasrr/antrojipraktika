@@ -1,15 +1,14 @@
 package lt.rokas.antrojipraktika.v2.v2.service;
 
-import lt.rokas.antrojipraktika.v2.v2.entity.StudentsGroup;
+import lt.rokas.antrojipraktika.v2.v2.repository.SubjectRepository;
 import lt.rokas.antrojipraktika.v2.v2.entity.Subject;
 import lt.rokas.antrojipraktika.v2.v2.entity.User;
-import lt.rokas.antrojipraktika.v2.v2.repository.SubjectRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class SubjectServiceImpl implements SubjectService{
+public class SubjectServiceImpl implements SubjectService {
     SubjectRepository subjectRepository;
 
     public SubjectServiceImpl(SubjectRepository subjectRepository)

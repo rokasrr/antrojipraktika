@@ -2,7 +2,6 @@ package lt.rokas.antrojipraktika.v2.v2.entity;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Map;
 
 @Entity
 @Table(name = "subjects")

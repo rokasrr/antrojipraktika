@@ -1,12 +1,10 @@
 package lt.rokas.antrojipraktika.v2.v2.controller;
 
 import lt.rokas.antrojipraktika.v2.v2.entity.Grade;
-import lt.rokas.antrojipraktika.v2.v2.entity.StudentsGroup;
 import lt.rokas.antrojipraktika.v2.v2.entity.Subject;
 import lt.rokas.antrojipraktika.v2.v2.entity.User;
 import lt.rokas.antrojipraktika.v2.v2.service.GradeService;
 import lt.rokas.antrojipraktika.v2.v2.service.SubjectService;
-import lt.rokas.antrojipraktika.v2.v2.service.SubjectServiceImpl;
 import lt.rokas.antrojipraktika.v2.v2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
